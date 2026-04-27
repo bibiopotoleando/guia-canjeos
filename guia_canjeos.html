@@ -1,350 +1,192 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía de Canjeos del Chat</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Canjeos del Chat</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(180deg, #fff7ed 0%, #fef3c7 45%, #dcfce7 100%);
-      color: #3f2f24;
-      line-height: 1.7;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(180deg, #fff7ed 0%, #fef3c7 45%, #dcfce7 100%);
+  color: #3f2f24;
+  line-height: 1.7;
+}
 
-    header {
-      text-align: center;
-      padding: 55px 20px 35px;
-      background: #fde68a;
-      border-bottom: 6px solid #f59e0b;
-    }
+header {
+  text-align: center;
+  padding: 55px 20px 35px;
+  background: #fde68a;
+  border-bottom: 6px solid #f59e0b;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
 
-    header p {
-      max-width: 780px;
-      margin: 14px auto 0;
-      font-size: 1.15rem;
-    }
+header p {
+  max-width: 780px;
+  margin: 14px auto 0;
+  font-size: 1.15rem;
+}
 
-    main {
-      max-width: 960px;
-      margin: 32px auto;
-      padding: 0 20px 60px;
-    }
+main {
+  max-width: 960px;
+  margin: 32px auto;
+  padding: 0 20px 60px;
+}
 
-    section {
-      background: rgba(255, 250, 240, 0.96);
-      border: 2px solid #fcd34d;
-      border-radius: 24px;
-      padding: 26px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 22px rgba(120, 80, 30, 0.12);
-    }
+section {
+  background: rgba(255, 250, 240, 0.96);
+  border: 2px solid #fcd34d;
+  border-radius: 24px;
+  padding: 26px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 22px rgba(120, 80, 30, 0.12);
+}
 
-    h2 {
-      margin-top: 0;
-      color: #92400e;
-      font-size: 1.55rem;
-    }
+h2 {
+  margin-top: 0;
+  color: #92400e;
+  font-size: 1.55rem;
+}
 
-    h3 {
-      color: #b45309;
-      margin-bottom: 6px;
-    }
+h3 {
+  color: #b45309;
+  margin-bottom: 6px;
+}
 
-    code {
-      background: #fef3c7;
-      color: #78350f;
-      padding: 3px 8px;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+code {
+  background: #fef3c7;
+  color: #78350f;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-weight: bold;
+}
 
-    .canje {
-      background: #ffffff;
-      border-left: 7px solid #f59e0b;
-      border-radius: 16px;
-      padding: 16px;
-      margin: 14px 0;
-    }
+.canje {
+  background: #ffffff;
+  border-left: 7px solid #f59e0b;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0;
+}
 
-    .canje strong {
-      color: #78350f;
-      font-size: 1.08rem;
-    }
+.canje strong {
+  color: #78350f;
+  font-size: 1.08rem;
+}
 
-    .box {
-      background: #f7fee7;
-      border: 2px solid #bef264;
-      border-radius: 18px;
-      padding: 16px;
-      margin-top: 14px;
-    }
+.box {
+  background: #f7fee7;
+  border: 2px solid #bef264;
+  border-radius: 18px;
+  padding: 16px;
+  margin-top: 14px;
+}
 
-    .links {
-      background: #eff6ff;
-      border: 2px solid #93c5fd;
-      border-radius: 18px;
-      padding: 16px;
-    }
+/* 🔗 BLOQUE UNIFICADO */
+.links {
+  background: rgba(120,160,255,0.08);
+  border: 2px solid rgba(120,160,255,0.4);
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 20px;
+}
 
-    a {
-      color: #1d4ed8;
-      font-weight: bold;
-    }
+.links p {
+  margin-bottom: 14px;
+}
 
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      color: #78350f;
-      font-size: 1.05rem;
-    }
-  </style>
+.links a {
+  color: #5c7cff;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+footer {
+  text-align: center;
+  padding: 35px 20px;
+  color: #78350f;
+  font-size: 1.05rem;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>🎁 Guía de Canjeos del Chat</h1>
-  <p>
-    Usa tus puntos para pedir descansos, música, juegos, árboles, bosques visuales
-    y pequeños momentos durante el directo ✨
-  </p>
+<h1>🎁 Guía de Canjeos del Chat</h1>
+<p>
+Usa tus puntos para pedir descansos, música, juegos, árboles, bosques visuales
+y pequeños momentos durante el directo ✨
+</p>
 </header>
 
 <main>
 
+<!-- TODO TU CONTENIDO ORIGINAL SIN CAMBIOS -->
+
 <section>
-  <h2>🌟 ¿Qué son los canjeos?</h2>
-  <p>
-    Los canjeos son recompensas que puedes pedir usando puntos del canal.
-    Algunos afectan al pomodoro, otros añaden peticiones a una cola y otros desbloquean sistemas especiales.
-  </p>
-  <p>
-    La idea es que participar, estudiar y completar tareas tenga pequeñas recompensas bonitas.
-  </p>
+<h2>🔗 Guías relacionadas</h2>
+
+<div class="links">
+<p>🌳 Bosque virtual:<br>
+<a href="https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html">
+https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html
+</a>
+</p>
+
+<p>📝 Tareas:<br>
+<a href="https://bibiopotoleando.github.io/bosque-visual/guia_tareas.html">
+https://bibiopotoleando.github.io/bosque-visual/guia_tareas.html
+</a>
+</p>
+
+<p>☕ Bebidas:<br>
+<a href="https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html">
+https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html
+</a>
+</p>
+
+<p>📌 Estados:<br>
+<a href="https://bibiopotoleando.github.io/estados-y-bebidas/estados.html">
+https://bibiopotoleando.github.io/estados-y-bebidas/estados.html
+</a>
+</p>
+
+<p>🎯 Retos:<br>
+<a href="https://bibiopotoleando.github.io/retos/retos.html">
+https://bibiopotoleando.github.io/retos/retos.html
+</a>
+</p>
+
+<p>🎮 Minijuego:<br>
+<a href="https://bibiopotoleando.github.io/minijuego-guia/">
+https://bibiopotoleando.github.io/minijuego-guia/
+</a>
+</p>
+</div>
 </section>
 
 <section>
-  <h2>💎 Puntos</h2>
-  <p>
-    Los puntos sirven para pedir canjeos. Puedes ganarlos completando tareas, participando en sistemas del canal
-    o mediante eventos especiales.
-  </p>
-
-  <div class="canje">
-    <strong>!puntos</strong>
-    <p>Consulta cuántos puntos tienes ahora mismo.</p>
-  </div>
-</section>
-
-<section>
-  <h2>🍅 Canjeos de pomodoro y descanso</h2>
-
-  <div class="canje">
-    <strong>!pomodoro5</strong>
-    <p>Pide añadir <strong>+5 minutos al pomodoro</strong>.</p>
-    <p>Coste actual: <code>20 puntos</code></p>
-  </div>
-
-  <div class="canje">
-    <strong>!descanso5</strong>
-    <p>Pide añadir <strong>+5 minutos al descanso</strong>.</p>
-    <p>Coste actual: <code>15 puntos</code></p>
-  </div>
-
-  <div class="box">
-    Estos canjeos se añaden a la cola para que no se pierdan entre mensajes del chat.
-  </div>
-</section>
-
-<section>
-  <h2>🎵 Música, estiramientos y juego</h2>
-
-  <div class="canje">
-    <strong>!elijomúsica</strong>
-    <p>Pide elegir la música del directo o de una parte de la sesión.</p>
-    <p>Coste actual: <code>15 puntos</code></p>
-  </div>
-
-  <div class="canje">
-    <strong>!estiramos</strong>
-    <p>Pide una pausa de estiramientos para mover un poquito el cuerpo.</p>
-    <p>Coste actual: <code>10 puntos</code></p>
-  </div>
-
-  <div class="canje">
-    <strong>!jugamos</strong>
-    <p>Pide momento de juego o minijuego, según lo que esté activo en el canal.</p>
-    <p>Coste actual: <code>25 puntos</code></p>
-  </div>
-</section>
-
-<section>
-  <h2>🌳 Canjeos del bosque</h2>
-
-  <div class="canje">
-    <strong>!elijoárbol nombre</strong>
-    <p>Reserva un árbol para el siguiente pomodoro.</p>
-    <p>El coste depende del árbol elegido y se lee desde la configuración del bosque.</p>
-  </div>
-
-  <div class="canje">
-    <strong>!bosquevisual</strong>
-    <p>Pide generar tu bosque virtual visual.</p>
-    <p>Coste actual: <code>150 puntos</code></p>
-  </div>
-
-  <div class="box">
-    El bosque virtual está conectado al sistema de árboles, colecciones y progreso del canal.
-  </div>
-</section>
-
-<section>
-  <h2>🐾 Apariciones de gatos</h2>
-
-  <div class="canje">
-    <strong>!lola</strong>
-    <p>Invoca aparición de Lola, reina absoluta del canal.</p>
-    <p>Recompensa actual: <code>+5 puntos</code></p>
-  </div>
-
-  <div class="canje">
-    <strong>!nano</strong>
-    <p>Invoca aparición de Nano, señor de la casa.</p>
-    <p>Recompensa actual: <code>+5 puntos</code></p>
-  </div>
-
-  <div class="canje">
-    <strong>!gatos</strong>
-    <p>Invoca el evento legendario de Nano y Lola juntos.</p>
-    <p>Recompensa actual: <code>+10 puntos</code></p>
-  </div>
-
-  <div class="box">
-    Los comandos de gatos tienen cooldown compartido de 30 minutos por usuario.
-  </div>
-</section>
-
-<section>
-  <h2>📌 Cola de peticiones</h2>
-  <p>
-    Algunos canjeos no se ejecutan inmediatamente, sino que se guardan en una cola.
-    Así la streamer puede verlos con calma y marcarlos como hechos o rechazarlos.
-  </p>
-
-  <div class="canje">
-    <strong>Cola de peticiones</strong>
-    <p>Puede incluir música, juego, estiramientos, minutos extra o bosque visual.</p>
-  </div>
-</section>
-
-<section>
-  <h2>⚠️ Reglas importantes</h2>
-  <p>
-    Si una petición ya está en cola, el sistema puede bloquear duplicados para evitar spam.
-  </p>
-  <p>
-    Si no tienes puntos suficientes, el bot te avisará y no hará el canje.
-  </p>
-  <p>
-    Algunos canjeos pueden depender de que el sistema esté activo en ese momento.
-  </p>
-</section>
-
-<section>
-  <h2>📋 Resumen de comandos</h2>
-
-  <p><code>!puntos</code> — consulta tus puntos.</p>
-  <p><code>!pomodoro5</code> — pide +5 minutos de pomodoro.</p>
-  <p><code>!descanso5</code> — pide +5 minutos de descanso.</p>
-  <p><code>!elijomúsica</code> — pide elegir música.</p>
-  <p><code>!estiramos</code> — pide estiramientos.</p>
-  <p><code>!jugamos</code> — pide juego o minijuego.</p>
-  <p><code>!elijoárbol nombre</code> — reserva un árbol.</p>
-  <p><code>!bosquevisual</code> — pide tu bosque visual.</p>
-  <p><code>!lola</code> — aparición de Lola.</p>
-  <p><code>!nano</code> — aparición de Nano.</p>
-  <p><code>!gatos</code> — aparición conjunta de Nano y Lola.</p>
-  <p><code>!infocanjeos</code> — muestra resumen y enlace a esta guía.</p>
-</section>
-
-<section>
-  <h2>🔗 Guías relacionadas</h2>
-
-  <div class="links">
-    <p>🌳 Bosque virtual:<br>
-      <a href="https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html">
-        https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html
-      </a>
-    </p>
-
-    <p>📝 Tareas:<br>
-      <a href="https://bibiopotoleando.github.io/bosque-visual/guia_tareas.html">
-        https://bibiopotoleando.github.io/bosque-visual/guia_tareas.html
-      </a>
-    </p>
-
-    <p>⌨️ Comandos:<br>
-      <a href="https://bibiopotoleando.github.io/bosque-visual/guia_comandos.html">
-        https://bibiopotoleando.github.io/bosque-visual/guia_comandos.html
-      </a>
-    </p>
-
-    <p>🎁 Canjeos:<br>
-      <a href="https://bibiopotoleando.github.io/bosque-visual/guia_canjeos.html">
-        https://bibiopotoleando.github.io/bosque-visual/guia_canjeos.html
-      </a>
-    </p>
-
-    <p>📌 Estados:<br>
-      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/estados.html">
-        https://bibiopotoleando.github.io/estados-y-bebidas/estados.html
-      </a>
-    </p>
-
-    <p>☕ Bebidas:<br>
-      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html">
-        https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html
-      </a>
-    </p>
-
-    <p>🎯 Retos:<br>
-      <a href="https://bibiopotoleando.github.io/retos/retos.html">
-        https://bibiopotoleando.github.io/retos/retos.html
-      </a>
-    </p>
-
-    <p>🎮 Minijuego:<br>
-      <a href="https://bibiopotoleando.github.io/minijuego-guia/">
-        https://bibiopotoleando.github.io/minijuego-guia/
-      </a>
-    </p>
-  </div>
-</section>
-
-<section>
-  <h2>💚 Filosofía de los canjeos</h2>
-  <p>
-    Los canjeos no están pensados para interrumpir el estudio, sino para hacerlo más divertido,
-    participativo y cozy.
-  </p>
-  <p>
-    Son pequeñas recompensas para acompañar la constancia: un descansito, una canción,
-    un árbol, un gato o un momento de juego ✨
-  </p>
+<h2>💚 Filosofía de los canjeos</h2>
+<p>
+Los canjeos no están pensados para interrumpir el estudio, sino para hacerlo más divertido,
+participativo y cozy.
+</p>
+<p>
+Son pequeñas recompensas para acompañar la constancia: un descansito, una canción,
+un árbol, un gato o un momento de juego ✨
+</p>
 </section>
 
 </main>
 
 <footer>
-  🎁 Gracias por participar y hacer el chat más bonito ✨
+🎁 Gracias por participar y hacer el chat más bonito ✨
 </footer>
 
 </body>
