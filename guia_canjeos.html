@@ -79,6 +79,17 @@ code {
   font-size: 1.08rem;
 }
 
+.precio {
+  display: inline-block;
+  margin-top: 6px;
+  background: #ecfccb;
+  border: 1px solid #bef264;
+  color: #365314;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
 .box {
   background: #f7fee7;
   border: 2px solid #bef264;
@@ -87,7 +98,6 @@ code {
   margin-top: 14px;
 }
 
-/* 🔗 BLOQUE UNIFICADO */
 .links {
   background: rgba(120,160,255,0.08);
   border: 2px solid rgba(120,160,255,0.4);
@@ -120,14 +130,98 @@ footer {
 <header>
 <h1>🎁 Guía de Canjeos del Chat</h1>
 <p>
-Usa tus puntos para pedir descansos, música, juegos, árboles, bosques visuales
+Usa tus puntos para pedir aumentos de descansos o pomodoros, música, juegos, árboles, bosques visuales
 y pequeños momentos durante el directo ✨
 </p>
 </header>
 
 <main>
 
-<!-- TODO TU CONTENIDO ORIGINAL SIN CAMBIOS -->
+<section>
+<h2>🎁 Canjeos disponibles</h2>
+
+<div class="canje">
+<strong>🍅 Ampliar pomodoro 5 minutos</strong><br>
+Añade 5 minutos extra al pomodoro/focus actual.
+<br><span class="precio">20 puntos</span>
+<br><code>!pomodoro5</code>
+</div>
+
+<div class="canje">
+<strong>☁️ Ampliar descanso 5 minutos</strong><br>
+Añade 5 minutos extra al descanso.
+<br><span class="precio">15 puntos</span>
+<br><code>!descanso5</code>
+</div>
+
+<div class="canje">
+<strong>🌳 Elegir árbol</strong><br>
+Reserva el árbol que se plantará en el siguiente pomo. El precio depende del árbol elegido.
+<br><span class="precio">Precio variable</span>
+<br><code>!elijoárbol nombre</code>
+</div>
+
+<div class="canje">
+<strong>🎵 Elegir música</strong><br>
+Permite pedir un cambio de música/ambiente para el directo.
+<br><span class="precio">15 puntos</span>
+<br><code>!elijomúsica</code>
+</div>
+
+<div class="canje">
+<strong>🧘 Estiramientos</strong><br>
+Pide una pausa breve para estirar y descansar un poquito el cuerpo, utilizando un vídeo.
+<br><span class="precio">10 puntos</span>
+<br><code>!estiramos</code>
+</div>
+
+<div class="canje">
+<strong>🎮 Juego</strong><br>
+Pide un momento de juego durante el descanso.
+<br><span class="precio">25 puntos</span>
+<br><code>!juego</code> / <code>!jugamos</code>
+</div>
+
+<div class="canje">
+<strong>🌿 Generar bosque virtual</strong><br>
+Pide que se genere tu álbum visual del bosque con tus árboles desbloqueados. Te pasamos en enlace para que veas tu colección.
+<br><span class="precio">150 puntos</span>
+<br><code>!bosquevisual</code>
+</div>
+
+<div class="canje">
+<strong>🏅 Visual de insignias</strong><br>
+Pide que se genere tu álbum visual de insignias desbloqueadas. Te pasamos en enlace para que veas tu colección.
+<br><span class="precio">150 puntos</span>
+<br><code>!insigniasvisual</code>
+</div>
+
+<div class="canje">
+<strong>🔁 Pasar a otro minijuego</strong><br>
+Permite cambiar el minijuego activo si el chat quiere pasar a otro.
+<br><span class="precio">Mitad de lo que se gana al acertar</span>
+<br><code>!pasapalabra</code>
+</div>
+</section>
+
+<section>
+<h2>🎵 Opciones de música</h2>
+<p>
+Cuando se canjea elegir música, estas son las opciones disponibles:
+</p>
+
+<div class="box">
+<p>
+📚 <strong>Biblioteca</strong> · 🌳 <strong>Bosque</strong> · ☕ <strong>Cafetería</strong> · 🔥 <strong>Chimenea</strong> · 
+🎻 <strong>Clásica</strong> · 🌧️ <strong>Lluvia</strong> · 🎧 <strong>Lofi</strong> · 🎹 <strong>Piano</strong> · 
+🤍 <strong>Ruido</strong> · ⌨️ <strong>Teclas</strong> · ⚡ <strong>Tecno</strong>
+</p>
+</div>
+
+<p>
+La música la proporciona pixabay.com (música y efectos de sonido sin regalías).
+</p>
+</section>
 
 <section>
 <h2>🔗 Guías relacionadas</h2>
@@ -169,19 +263,18 @@ https://bibiopotoleando.github.io/minijuego-guia/
 </a>
 </p>
 
-  <p>📦 Material:<br>
+<p>📦 Material:<br>
 <a href="https://bibiopotoleando.github.io/estados-y-bebidas/material.html">
 https://bibiopotoleando.github.io/estados-y-bebidas/material.html
 </a>
 </p>
 
-  <p>🏅 Insignias:<br>
-  <a href="https://bibiopotoleando.github.io/insignias-visual/guia_insignias.html">
-    https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html
-  </a>
+<p>🏅 Insignias:<br>
+<a href="https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html">
+https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html
+</a>
 </p>
-
-  </div>
+</div>
 </section>
 
 <section>
@@ -192,7 +285,7 @@ participativo y cozy.
 </p>
 <p>
 Son pequeñas recompensas para acompañar la constancia: un descansito, una canción,
-un árbol o un momento de juego ✨
+un árbol, un álbum visual o un momento de juego ✨
 </p>
 </section>
 
