@@ -245,6 +245,161 @@ El premio definitivo a la constancia. Diseñaré y programaré contigo un árbol
 </section>
 """
 
+import re
+# The requested URL to replace with
+insignias_url = "https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html"
+
+# A regex to catch the old URL, even with slight variations if any exist
+old_url_pattern = r"https://bibiopotoleando\.github\.io/(insignias-visual|guia-insignias)/guia_insignias\.html"
+
+new_html_content = re.sub(old_url_pattern, insignias_url, html_content)
+
+# Add the Discord link block to the "Guías relacionadas" section if it's not already there
+discord_link_block = """
+    <p>👾 Discord:<br>
+      <a href="https://bibiopotoleando.github.io/discord/index.html">
+        https://bibiopotoleando.github.io/discord/index.html
+      </a>
+    </p>"""
+
+if "👾 Discord" not in new_html_content and '<div class="links">' in new_html_content:
+    new_html_content = new_html_content.replace('</div>\n</section>', f'{discord_link_block}\n  </div>\n</section>')
+
+with open('GITHUB_CANJEOS_LINKS_UPDATED.html', 'w', encoding='utf-8') as f:
+    f.write(new_html_content)
+
+print("[file-tag: GITHUB_CANJEOS_LINKS_UPDATED.html]")<br><span class="precio">1.850 puntos</span>
+</div>
+
+<div class="canje">
+<strong>📊 Sugerir encuesta</strong><br>
+Sugiere una encuesta que se realizará durante el stream.
+<br><span class="precio">2.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🎵 Elegir música</strong><br>
+Cambia el ambiente en el próximo pomodoro. Opciones: Biblioteca, Bosque, Cafetería, Chimenea, Clásica, Lluvia, Ondas de mar, Ondas alfa, Piano, Ruido, Teclas o Tecno.
+<br><span class="precio">2.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>❓ Haz una pregunta o abre tema de conversación</strong><br>
+¡Pregunta o abre debate de lo que quieras! Siempre con respeto y considerando que te podamos contestar. Lo vemos durante el descanso.
+<br><span class="precio">2.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🕹️ ¡Jugamos!</strong><br>
+Nos echamos una partida rápida durante la pausa de estudio: kukoro, contexto, Jackbox Party, jklm fun, Escape Rooms, Quiz, Burgers, Aventura...
+<br><span class="precio">2.200 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>⛩️ Elijo Árbol: Colección Japonesa</strong><br>
+Planta un árbol de la colección Japonesa en el próximo pomodoro. Opciones: sakura, bonsai, arce_rojo, bambu, pino_japones.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">2.500 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>✨ Elijo Árbol: Colección Fantástica</strong><br>
+Planta un árbol mágico de la colección Fantástica en el próximo pomodoro. Opciones: luminoso, cristal, oscuro, arcoiris, dorado, mecanico, fantasma.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">3.750 puntos</span>
+</div>
+
+<div class="canje">
+<strong>⏱️ Reto express de 20 segundos</strong><br>
+Ponme a prueba con un minireto que se pueda cumplir rápido en directo durante el descanso. ¡Sé creativx pero respeta las normas!
+<br><span class="precio">4.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🚩 Guiar raid</strong><br>
+Sugiere a quién hacer un raid al final del stream.
+<br><span class="precio">5.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>✍️ Frase en la pizarra</strong><br>
+Pon tu frase motivacional o divertida (no spam!) en la pizarra física de mi fondo. La escribiré a mano durante el próximo descanso.
+<br><span class="precio">5.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>📚 Elijo Árbol: Colección Oposiciones</strong><br>
+¡La colección del canal! Lo plantamos en el próximo pomodoro. Opciones: cafe, apuntes, estres, no_duermo, examen, aprobado, boe, subrayador, temas, descanso_culposo.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">5.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>📰 Noticias en 10 minutos</strong><br>
+Vemos un vídeo de 10 minutos en el descanso con el resumen de las noticias del día para enterarnos de lo que pasa fuera de la opo, mantenernos informados y no sentirnos aislados del mundo 📰🌍
+<br><span class="precio">5.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>⚙️ Añadir comando</strong><br>
+Añade el comando que se te ocurra, ¡sé creativx!
+<br><span class="precio">7.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌻 Elijo Árbol: Colección Flores</strong><br>
+El premio gordo definitivo. Planta flores especiales en el próximo pomodoro. Opciones: rosa, tulipan, lavanda... o las legendarias: rosa_negra, rosa_dorada. Uso !árboles flores para ver todas.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">7.500 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌿 Generar tu Bosque Virtual</strong><br>
+Pide que se genere en el chat el enlace web actualizado a tu álbum visual con todos tus árboles coleccionados hasta ahora.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">10.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🏅 Ver mis Insignias</strong><br>
+Genera tu colección visual de insignias desbloqueadas en el chat para presumir de tus logros de estudio.
+<br><span class="precio">10.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #5865F2; background: rgba(88, 101, 242, 0.04);">
+<strong>🎧 Acceso Discord Salas Pomodoros</strong><br>
+Canjea para obtener el rol necesario y entrar a cualquiera de las salas de Pomodoro (90/15, 75/10 o 60/10) y estudiar con el grupo. Pon tu usuario o mándamelo por susurro.
+<br><span class="precio" style="color: #5865F2; font-weight: bold;">20.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #5865F2; background: rgba(88, 101, 242, 0.04);">
+<strong>🎙️ Acceso Discord Sala Directo Twitch</strong><br>
+¡Únete a mi mesa de estudio! Canjea para obtener el rol que te permite conectar al canal de voz donde grabo el stream. Pon tu usuario o mándamelo por susurro.
+<br><span class="precio" style="color: #5865F2; font-weight: bold;">35.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #5865F2; background: rgba(88, 101, 242, 0.04);">
+<strong>📷 Cámara Discord</strong><br>
+Escribe aquí tu usuario de Discord exacto. ⚠️ REQUISITO: Es OBLIGATORIO haberte presentado primero en el canal #presentaciones del servidor para que te demos el acceso a la cámara.
+<br><span class="precio" style="color: #5865F2; font-weight: bold;">50.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #fbbf24; background: rgba(251, 191, 36, 0.04);">
+<strong>⭐ Insignia de Autor</strong><br>
+El premio definitivo a la constancia. Diseñaré y programaré contigo una insignia exclusiva y única en el mundo para tu álbum de insignias.
+<br><span class="precio" style="color: #d97706; font-weight: bold;">100.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #fbbf24; background: rgba(251, 191, 36, 0.04);">
+<strong>🐸 Añadir BetterTTV Emote</strong><br>
+Añade un emote de BetterTTV al canal de bibiopotoleando. Introduce el enlace a un emote de BetterTTV desde betterttv.com. Solo se admiten emotes que tengan activada la opción de compartir.
+<br><span class="precio" style="color: #d97706; font-weight: bold;">100.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #fbbf24; background: rgba(251, 191, 36, 0.04);">
+<strong>🌌 Árbol de Autor</strong><br>
+El premio definitivo a la constancia. Diseñaré y programaré contigo un árbol exclusivo y único en el mundo para tu Bosque Virtual.
+<br><span class="precio" style="color: #d97706; font-weight: bold;">125.000 puntos</span>
+</div>
+
+</section>
+"""
+
 with open('GITHUB_CANJEOS_FINAL.html', 'w', encoding='utf-8') as f:
     f.write(html_content)
 
