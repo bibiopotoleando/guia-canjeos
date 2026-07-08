@@ -1,40 +1,254 @@
-<section>
+html_content = """<section>
 <h2>🎁 Recompensas con PulpiPuntiños en el chat</h2>
 <p>Haz clic en el icono del pulpo abajo en el chat para canjear estas ventajas directas en el directo:</p>
 
 <div class="canje">
-<strong>🍅 Ampliar pomodoro 5 minutos</strong><br>
-Añade 5 minutos extra al pomodoro o focus actual para terminar tus tareas.
-<br><span class="precio">250 puntos</span>
-</div>
-
-<div class="canje">
-<strong>☁️ Ampliar descanso 5 minutos</strong><br>
-Añade 5 minutos extra a la pausa para estirar o charlar un ratito más.
-<br><span class="precio">200 puntos</span>
+<strong>💡 Pedir una pista</strong><br>
+Revela un dato o una letra de la respuesta actual. ¡Ojo! Cada pista reduce el premio final del minijuego en 5 puntos.
+<br><span class="precio">25 puntos</span>
 </div>
 
 <div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
-<strong>🌳 Árboles de Autor (Por Colecciones)</strong><br>
-Elige la colección que prefieras en la tienda de Twitch y escribe abajo el nombre exacto de la especie que deseas plantar durante el próximo Pomodoro. ¡Mira las opciones con el comando <code>!árboles [nombre_colección]</code>!
-<ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.95em;">
-  <li><strong>Colección Básica:</strong> Roble, pino, olivo... <span style="color:#22c55e; font-weight:bold;">(3.500 pts)</span></li>
-  <li><strong>Colección Española:</strong> Encina, almendro, naranjo... <span style="color:#22c55e; font-weight:bold;">(10.000 pts)</span></li>
-  <li><strong>Colecciones Estacionales (Otoñal / Tropical):</strong> Arce, palmera... <span style="color:#22c55e; font-weight:bold;">(12.500 - 14.000 pts)</span></li>
-  <li><strong>Colecciones Estándar (Frutales / Invernal / Desierto):</strong> Manzano, acebo, cactus... <span style="color:#22c55e; font-weight:bold;">(15.000 - 18.000 pts)</span></li>
-  <li><strong>Colección Japonesa:</strong> Sakura, bonsái, bambú... <span style="color:#22c55e; font-weight:bold;">(20.000 pts)</span></li>
-  <li><strong>Colección Familia:</strong> Madre, padre, abuela... <span style="color:#22c55e; font-weight:bold;">(30.000 pts)</span></li>
-  <li><strong>Colección Fantástica:</strong> Luminoso, cristal, arcoíris... <span style="color:#22c55e; font-weight:bold;">(65.000 pts)</span></li>
-  <li><strong>Colección Oposiciones (¡Temática del canal!):</strong> Café, apuntes, boe... <span style="color:#22c55e; font-weight:bold;">(85.000 pts)</span></li>
-  <li><strong>Colección Flores (¡Premio gordo Endgame!):</strong> Rosa negra, rosa dorada... <span style="color:#22c55e; font-weight:bold;">(150.000 pts)</span></li>
-</ul>
+<strong>🌱 Elijo Árbol: Colección básica</strong><br>
+Elige qué árbol de la colección básica quieres plantar en el próximo pomodoro. ¡Escribe el nombre del árbol aquí abajo! (Opciones: roble, pino, olivo, abeto, sauce)
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">50 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🔠 Pasapalabra</strong><br>
+Salta el minijuego activo que esté atascado en pantalla y lanza uno completamente nuevo para el chat.
+<br><span class="precio">50 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🧘 ¡Oye! Corrige la postura.</strong><br>
+Recuérdale a Alba que corrija la postura antes de acabar estudiando en modo gamba 🦐📚
+<br><span class="precio">100 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #fbbf24; background: rgba(251, 191, 36, 0.04);">
+<strong>🥳 ¡¡Plaza conseguida!! 🎓</strong><br>
+¡El momento más esperado! Si has aprobado tu oposición y tienes tu plaza, canjea para que toda la comunidad lo celebre contigo por todo lo alto. ¡Te lo has ganado a pulso tras tantos pomodoros! 🍅💪
+<br><span class="precio" style="color: #d97706; font-weight: bold;">100 puntos</span>
+</div>
+
+<div class="canje">
+<strong>💧 !Oye! Hidrátate, anda.</strong><br>
+Recuérdale a Alba que beba agüita antes de secarse como una pasa de biblioteca 💧📚
+<br><span class="precio">200 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🎮 Minijuego extra</strong><br>
+Permite saltarse el límite habitual del descanso actual y jugar un minijuego interactivo adicional de los de la pantalla.
+<br><span class="precio">350 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>♻️ Mercado de árboles</strong><br>
+Si tienes 30 uds del mismo árbol, los puedes cambiar por uno de la siguiente colección al repetido: [tu_árbol_repetido] [árbol_deseado].
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">500 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌴 Elijo Árbol: Colección Tropical</strong><br>
+Planta un árbol de la colección Tropical en el próximo pomodoro. Opciones: palmera, cocotero, mango, platanera, flamboyan.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">700 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🍎 Elijo Árbol: Colección Frutales</strong><br>
+Planta un árbol de la colección Frutales en el próximo pomodoro. Opciones: manzano, peral, cerezo, melocotonero, granado.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">800 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌳 Elijo Árbol: Colección Española</strong><br>
+Planta un árbol de la colección Española en el próximo pomodoro. Opciones: encina, almendro, naranjo, limonero, alcornoque.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">850 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌲 Elijo Árbol: Colección Invernal</strong><br>
+Planta un árbol de la colección Invernal en el próximo pomodoro. Opciones: abeto_nevado, pino_nevado, abedul, acebo, sauce_helado.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">900 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🤸 Estiramientos</strong><br>
+Ponemos un vídeo breve en pantalla para mover el cuerpo, cuidar la postura y descansar un poquito la espalda en el descanso (5-10 mins).
+<br><span class="precio">1.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>💬 Chat Solo emoticonos</strong><br>
+Activaré el modo Solo emoticonos durante 2 minutos.
+<br><span class="precio">1.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌵 Elijo Árbol: Colección Desierto</strong><br>
+Planta un árbol de la colección Desierto en el próximo pomodoro. Opciones: cactus, cactus_flor, agave, yuca, baobab.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">1.100 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🍁 Elijo Árbol: Colección Otoñal</strong><br>
+Planta un árbol de la colección Otoñal en el próximo pomodoro. Opciones: arce_naranja, roble_otonal, castano, nogal, liquidambar.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">1.500 puntos</span>
+</div>
+
+<div class="canje">
+<strong>☁️ Ampliar descanso</strong><br>
+Añade 5 minutos extra al descanso actual para respirar, beber agua o estirar.
+<br><span class="precio">1.500 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>👨‍👩‍👧‍👦 Elijo Árbol: Colección Familia</strong><br>
+Planta un miembro de la colección Familia en tu bosque en el próximo pomodoro. Escribe tu opción abajo: madre, padre, abuela, abuelo, hermanos.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">1.800 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🍅 Ampliar pomodoro</strong><br>
+Añade 5 minutos extra al pomodoro o bloque de focus actual. ¡A chapar un poquito más!
+<br><span class="precio">1.850 puntos</span>
+</div>
+
+<div class="canje">
+<strong>📊 Sugerir encuesta</strong><br>
+Sugiere una encuesta que se realizará durante el stream.
+<br><span class="precio">2.000 puntos</span>
 </div>
 
 <div class="canje">
 <strong>🎵 Elegir música</strong><br>
-Escribe tu ambiente favorito al canjear (biblioteca, bosque, cafetería, chimenea, clásica, lluvia, lofi, mar, ondas alfa, piano, ruido, teclas o tecno) para cambiar la música de fondo.
-<br><span class="precio">150 puntos</span>
+Cambia el ambiente en el próximo pomodoro. Opciones: Biblioteca, Bosque, Cafetería, Chimenea, Clásica, Lluvia, Ondas de mar, Ondas alfa, Piano, Ruido, Teclas o Tecno.
+<br><span class="precio">2.000 puntos</span>
 </div>
+
+<div class="canje">
+<strong>❓ Haz una pregunta o abre tema de conversación</strong><br>
+¡Pregunta o abre debate de lo que quieras! Siempre con respeto y considerando que te podamos contestar. Lo vemos durante el descanso.
+<br><span class="precio">2.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🕹️ ¡Jugamos!</strong><br>
+Nos echamos una partida rápida durante la pausa de estudio: kukoro, contexto, Jackbox Party, jklm fun, Escape Rooms, Quiz, Burgers, Aventura...
+<br><span class="precio">2.200 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>⛩️ Elijo Árbol: Colección Japonesa</strong><br>
+Planta un árbol de la colección Japonesa en el próximo pomodoro. Opciones: sakura, bonsai, arce_rojo, bambu, pino_japones.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">2.500 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>✨ Elijo Árbol: Colección Fantástica</strong><br>
+Planta un árbol mágico de la colección Fantástica en el próximo pomodoro. Opciones: luminoso, cristal, oscuro, arcoiris, dorado, mecanico, fantasma.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">3.750 puntos</span>
+</div>
+
+<div class="canje">
+<strong>⏱️ Reto express de 20 segundos</strong><br>
+Ponme a prueba con un minireto que se pueda cumplir rápido en directo durante el descanso. ¡Sé creativx pero respeta las normas!
+<br><span class="precio">4.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🚩 Guiar raid</strong><br>
+Sugiere a quién hacer un raid al final del stream.
+<br><span class="precio">5.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>✍️ Frase en la pizarra</strong><br>
+Pon tu frase motivacional o divertida (no spam!) en la pizarra física de mi fondo. La escribiré a mano durante el próximo descanso.
+<br><span class="precio">5.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>📚 Elijo Árbol: Colección Oposiciones</strong><br>
+¡La colección del canal! Lo plantamos en el próximo pomodoro. Opciones: cafe, apuntes, estres, no_duermo, examen, aprobado, boe, subrayador, temas, descanso_culposo.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">5.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>📰 Noticias en 10 minutos</strong><br>
+Vemos un vídeo de 10 minutos en el descanso con el resumen de las noticias del día para enterarnos de lo que pasa fuera de la opo, mantenernos informados y no sentirnos aislados del mundo 📰🌍
+<br><span class="precio">5.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>⚙️ Añadir comando</strong><br>
+Añade el comando que se te ocurra, ¡sé creativx!
+<br><span class="precio">7.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌻 Elijo Árbol: Colección Flores</strong><br>
+El premio gordo definitivo. Planta flores especiales en el próximo pomodoro. Opciones: rosa, tulipan, lavanda... o las legendarias: rosa_negra, rosa_dorada. Uso !árboles flores para ver todas.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">7.500 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #22c55e; background: rgba(34, 197, 94, 0.04);">
+<strong>🌿 Generar tu Bosque Virtual</strong><br>
+Pide que se genere en el chat el enlace web actualizado a tu álbum visual con todos tus árboles coleccionados hasta ahora.
+<br><span class="precio" style="color: #16a34a; font-weight: bold;">10.000 puntos</span>
+</div>
+
+<div class="canje">
+<strong>🏅 Ver mis Insignias</strong><br>
+Genera tu colección visual de insignias desbloqueadas en el chat para presumir de tus logros de estudio.
+<br><span class="precio">10.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #5865F2; background: rgba(88, 101, 242, 0.04);">
+<strong>🎧 Acceso Discord Salas Pomodoros</strong><br>
+Canjea para obtener el rol necesario y entrar a cualquiera de las salas de Pomodoro (90/15, 75/10 o 60/10) y estudiar con el grupo. Pon tu usuario o mándamelo por susurro.
+<br><span class="precio" style="color: #5865F2; font-weight: bold;">20.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #5865F2; background: rgba(88, 101, 242, 0.04);">
+<strong>🎙️ Acceso Discord Sala Directo Twitch</strong><br>
+¡Únete a mi mesa de estudio! Canjea para obtener el rol que te permite conectar al canal de voz donde grabo el stream. Pon tu usuario o mándamelo por susurro.
+<br><span class="precio" style="color: #5865F2; font-weight: bold;">35.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #5865F2; background: rgba(88, 101, 242, 0.04);">
+<strong>📷 Cámara Discord</strong><br>
+Escribe aquí tu usuario de Discord exacto. ⚠️ REQUISITO: Es OBLIGATORIO haberte presentado primero en el canal #presentaciones del servidor para que te demos el acceso a la cámara.
+<br><span class="precio" style="color: #5865F2; font-weight: bold;">50.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #fbbf24; background: rgba(251, 191, 36, 0.04);">
+<strong>⭐ Insignia de Autor</strong><br>
+El premio definitivo a la constancia. Diseñaré y programaré contigo una insignia exclusiva y única en el mundo para tu álbum de insignias.
+<br><span class="precio" style="color: #d97706; font-weight: bold;">100.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #fbbf24; background: rgba(251, 191, 36, 0.04);">
+<strong>🐸 Añadir BetterTTV Emote</strong><br>
+Añade un emote de BetterTTV al canal de bibiopotoleando. Introduce el enlace a un emote de BetterTTV desde betterttv.com. Solo se admiten emotes que tengan activada la opción de compartir.
+<br><span class="precio" style="color: #d97706; font-weight: bold;">100.000 puntos</span>
+</div>
+
+<div class="canje" style="border-left: 5px solid #fbbf24; background: rgba(251, 191, 36, 0.04);">
+<strong>🌌 Árbol de Autor</strong><br>
+El premio definitivo a la constancia. Diseñaré y programaré contigo un árbol exclusivo y único en el mundo para tu Bosque Virtual.
+<br><span class="precio" style="color: #d97706; font-weight: bold;">125.000 puntos</span>
+</div>
+
+</section>
+"""
+
+with open('GITHUB_CANJEOS_FINAL.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print("[file-tag: GITHUB_CANJEOS_FINAL.html]")</div>
 
 <div class="canje">
 <strong>🧘 Estiramientos</strong><br>
