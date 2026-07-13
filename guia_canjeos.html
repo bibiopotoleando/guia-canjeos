@@ -1,457 +1,156 @@
-html_content = """<!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Guía de Canjeos</title>
-
 <style>
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: linear-gradient(180deg, #fff7ed 0%, #fef3c7 45%, #ecfccb 100%);
-  color: #3f2f24;
-  line-height: 1.7;
-}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#fff7ed 0%,#fef3c7 45%,#ecfccb 100%);color:#3f2f24;line-height:1.7}
+header{text-align:center;padding:55px 20px 35px;background:#fde68a;border-bottom:6px solid #fbbf24}
+header h1{margin:0;font-size:2.5rem}
+header p{max-width:820px;margin:14px auto 0;font-size:1.15rem}
+main{max-width:980px;margin:32px auto;padding:0 20px 60px}
+section{background:rgba(255,250,240,.95);border:2px solid #fcd34d;border-radius:24px;padding:26px;margin-bottom:24px;box-shadow:0 8px 22px rgba(120,80,30,.12)}
+h2{margin-top:0;color:#92400e;font-size:1.55rem}
+.intro-box{background:rgba(255,255,255,.72);border-radius:16px;padding:16px;margin-bottom:18px}
+.canje{background:#fffbeb;border-left:7px solid #f59e0b;border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 2px 8px rgba(120,80,30,.05)}
+.canje strong{font-size:1.1rem;color:#78350f}
+.precio{display:inline-block;margin-top:7px;background:#fef3c7;color:#b45309;padding:4px 10px;border-radius:8px;font-weight:bold;font-size:.9rem;border:1px solid #fcd34d}
+.canje-arbol{border-left-color:#22c55e;background:rgba(34,197,94,.05)}
+.canje-arbol .precio{color:#16a34a;background:#dcfce7;border-color:#86efac}
+.canje-vip{border-left-color:#fbbf24;background:rgba(251,191,36,.06)}
+.canje-vip .precio{color:#d97706;background:#fef3c7;border-color:#fcd34d}
+.canje-discord{border-left-color:#5865f2;background:rgba(88,101,242,.05)}
+.canje-discord .precio{color:#4752c4;background:#e0e5ff;border-color:#a3b1ff}
+.canje-bits{border-left-color:#9147ff;background:rgba(145,71,255,.055)}
+.canje-bits .precio{color:#6d28d9;background:#ede9fe;border-color:#c4b5fd}
+.canje-sus{border-left-color:#ec4899;background:rgba(236,72,153,.05)}
+.canje-sus .precio{color:#be185d;background:#fce7f3;border-color:#f9a8d4}
+.notice{border-left:6px solid #8b5cf6;background:#f5f3ff;border-radius:12px;padding:15px;margin:16px 0}
+code{background:#f3e8d4;padding:2px 6px;border-radius:7px;font-weight:700}
+.links{background:rgba(120,160,255,.08);border:2px solid rgba(120,160,255,.4);border-radius:14px;padding:15px;margin-top:20px}
+.links p{margin-bottom:14px;margin-top:0}
+.links a{color:#5c7cff;font-weight:600;word-break:break-word}
+footer{text-align:center;padding:35px 20px;color:#78350f;font-size:1.05rem}
+@media(max-width:700px){header h1{font-size:2rem}main{padding:0 12px 40px}section{padding:18px;border-radius:18px}}
 
-header {
-  text-align: center;
-  padding: 55px 20px 35px;
-  background: #fde68a;
-  border-bottom: 6px solid #fbbf24;
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:18px}
+.indice{
+  background:linear-gradient(135deg,#fffdf6 0%,#fff7df 100%);
+  border:2px solid #fbbf24;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+.indice-intro{
+  margin-top:-4px;
+  color:#6f5238;
 }
-
-header p {
-  max-width: 760px;
-  margin: 14px auto 0;
-  font-size: 1.15rem;
+.indice-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px;
+  margin-top:18px;
 }
-
-main {
-  max-width: 940px;
-  margin: 32px auto;
-  padding: 0 20px 60px;
+.indice-link{
+  display:block;
+  padding:15px 16px;
+  border-radius:15px;
+  background:rgba(255,255,255,.84);
+  border:1px solid #f4cf68;
+  color:#78350f;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow:0 3px 10px rgba(120,80,30,.07);
+  transition:transform .16s ease,box-shadow .16s ease,background .16s ease;
 }
-
-section {
-  background: rgba(255, 250, 240, 0.95);
-  border: 2px solid #fcd34d;
-  border-radius: 24px;
-  padding: 26px;
-  margin-bottom: 24px;
-  box-shadow: 0 8px 22px rgba(120, 80, 30, 0.12);
+.indice-link span{
+  display:block;
+  margin-top:3px;
+  color:#7b6653;
+  font-size:.9rem;
+  font-weight:500;
+  line-height:1.4;
 }
-
-h2 {
-  margin-top: 0;
-  color: #92400e;
-  font-size: 1.55rem;
+.indice-link:hover,
+.indice-link:focus{
+  transform:translateY(-2px);
+  box-shadow:0 7px 16px rgba(120,80,30,.13);
+  background:#fff;
+  outline:none;
 }
-
-.canje {
-  background: #fffbeb;
-  border-left: 7px solid #f59e0b;
-  border-radius: 14px;
-  padding: 16px;
-  margin: 14px 0;
-  box-shadow: 0 2px 8px rgba(120, 80, 30, 0.05);
+.volver{
+  display:inline-block;
+  margin-top:8px;
+  color:#92400e;
+  font-weight:700;
+  text-decoration:none;
 }
-
-.canje strong {
-  font-size: 1.1rem;
-  color: #78350f;
-}
-
-.precio {
-  display: inline-block;
-  margin-top: 6px;
-  background: #fef3c7;
-  color: #b45309;
-  padding: 4px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.9rem;
-  border: 1px solid #fcd34d;
-}
-
-/* Specific Canje Styles based on categories */
-.canje-arbol {
-  border-left: 7px solid #22c55e;
-  background: rgba(34, 197, 94, 0.04);
-}
-.canje-arbol .precio {
-  color: #16a34a;
-  background: #dcfce7;
-  border-color: #86efac;
-}
-
-.canje-vip {
-  border-left: 7px solid #fbbf24;
-  background: rgba(251, 191, 36, 0.04);
-}
-.canje-vip .precio {
-  color: #d97706;
-  background: #fef3c7;
-  border-color: #fcd34d;
-}
-
-.canje-discord {
-  border-left: 7px solid #5865F2;
-  background: rgba(88, 101, 242, 0.04);
-}
-.canje-discord .precio {
-  color: #4752c4;
-  background: #e0e5ff;
-  border-color: #a3b1ff;
-}
-
-/* 🔗 LINKS */
-.links {
-  background: rgba(120,160,255,0.08);
-  border: 2px solid rgba(120,160,255,0.4);
-  border-radius: 14px;
-  padding: 15px;
-  margin-top: 20px;
-}
-
-.links p {
-  margin-bottom: 14px;
-  margin-top: 0;
-}
-
-.links a {
-  color: #5c7cff;
-  font-weight: 600;
-  word-break: break-word;
-}
-
-footer {
-  text-align: center;
-  padding: 35px 20px;
-  color: #78350f;
-  font-size: 1.05rem;
+.volver:hover{text-decoration:underline}
+@media(max-width:700px){
+  .indice-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
-
 <body>
-
 <header>
-  <h1>🎁 Guía de Canjeos</h1>
-  <p>
-    Utiliza tus PulpiPuntiños para interactuar con el stream, hacer pausas divertidas o expandir tu Bosque Virtual ✨
-  </p>
+<h1>🎁 Guía de Canjeos y Potenciadores</h1>
+<p>Usa tus PulpiPuntiños para interactuar con el directo o apoya el canal mediante Bits para desbloquear árboles, packs y ventajas especiales ✨</p>
 </header>
-
 <main>
-
-<section>
-<h2>🎟️ Recompensas del Chat</h2>
-<p>Haz clic en el icono del pulpo abajo en el chat para canjear estas ventajas directas en el directo:</p>
-
-<div class="canje">
-<strong>💡 Pedir una pista</strong><br>
-Revela un dato o una letra de la respuesta actual. ¡Ojo! Cada pista reduce el premio final del minijuego en 5 puntos.
-<br><span class="precio">25 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🌱 Elijo Árbol: Colección básica</strong><br>
-Elige qué árbol de la colección básica quieres plantar en el próximo pomodoro. ¡Escribe el nombre del árbol aquí abajo! (Opciones: roble, pino, olivo, abeto, sauce)
-<br><span class="precio">50 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🔠 Pasapalabra</strong><br>
-Salta el minijuego activo que esté atascado en pantalla y lanza uno completamente nuevo para el chat.
-<br><span class="precio">50 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🧘 ¡Oye! Corrige la postura.</strong><br>
-Recuérdale a Alba que corrija la postura antes de acabar estudiando en modo gamba 🦐📚
-<br><span class="precio">100 puntos</span>
-</div>
-
-<div class="canje canje-vip">
-<strong>🥳 ¡¡Plaza conseguida!! 🎓</strong><br>
-¡El momento más esperado! Si has aprobado tu oposición y tienes tu plaza, canjea para que toda la comunidad lo celebre contigo por todo lo alto. ¡Te lo has ganado a pulso tras tantos pomodoros! 🍅💪
-<br><span class="precio">100 puntos</span>
-</div>
-
-<div class="canje">
-<strong>💧 !Oye! Hidrátate, anda.</strong><br>
-Recuérdale a Alba que beba agüita antes de secarse como una pasa de biblioteca 💧📚
-<br><span class="precio">200 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🎮 Minijuego extra</strong><br>
-Permite saltarse el límite habitual del descanso actual y jugar un minijuego interactivo adicional de los de la pantalla.
-<br><span class="precio">350 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>♻️ Mercado de árboles</strong><br>
-Si tienes 30 uds del mismo árbol, los puedes cambiar por uno de la siguiente colección al repetido: [tu_árbol_repetido] [árbol_deseado].
-<br><span class="precio">500 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🌴 Elijo Árbol: Colección Tropical</strong><br>
-Planta un árbol de la colección Tropical en el próximo pomodoro. Opciones: palmera, cocotero, mango, platanera, flamboyan.
-<br><span class="precio">700 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🍎 Elijo Árbol: Colección Frutales</strong><br>
-Planta un árbol de la colección Frutales en el próximo pomodoro. Opciones: manzano, peral, cerezo, melocotonero, granado.
-<br><span class="precio">800 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🌳 Elijo Árbol: Colección Española</strong><br>
-Planta un árbol de la colección Española en el próximo pomodoro. Opciones: encina, almendro, naranjo, limonero, alcornoque.
-<br><span class="precio">850 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🌲 Elijo Árbol: Colección Invernal</strong><br>
-Planta un árbol de la colección Invernal en el próximo pomodoro. Opciones: abeto_nevado, pino_nevado, abedul, acebo, sauce_helado.
-<br><span class="precio">900 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🤸 Estiramientos</strong><br>
-Ponemos un vídeo breve en pantalla para mover el cuerpo, cuidar la postura y descansar un poquito la espalda en el descanso (5-10 mins).
-<br><span class="precio">1.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>💬 Chat Solo emoticonos</strong><br>
-Activaré el modo Solo emoticonos durante 2 minutos.
-<br><span class="precio">1.000 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🌵 Elijo Árbol: Colección Desierto</strong><br>
-Planta un árbol de la colección Desierto en el próximo pomodoro. Opciones: cactus, cactus_flor, agave, yuca, baobab.
-<br><span class="precio">1.100 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🍁 Elijo Árbol: Colección Otoñal</strong><br>
-Planta un árbol de la colección Otoñal en el próximo pomodoro. Opciones: arce_naranja, roble_otonal, castano, nogal, liquidambar.
-<br><span class="precio">1.500 puntos</span>
-</div>
-
-<div class="canje">
-<strong>☁️ Ampliar descanso</strong><br>
-Añade 5 minutos extra al descanso actual para respirar, beber agua o estirar.
-<br><span class="precio">1.500 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>👨‍👩‍👧‍👦 Elijo Árbol: Colección Familia</strong><br>
-Planta un miembro de la colección Familia en tu bosque en el próximo pomodoro. Escribe tu opción abajo: madre, padre, abuela, abuelo, hermanos.
-<br><span class="precio">1.800 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🍅 Ampliar pomodoro</strong><br>
-Añade 5 minutos extra al pomodoro o bloque de focus actual. ¡A chapar un poquito más!
-<br><span class="precio">1.850 puntos</span>
-</div>
-
-<div class="canje">
-<strong>📊 Sugerir encuesta</strong><br>
-Sugiere una encuesta que se realizará durante el stream.
-<br><span class="precio">2.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🎵 Elegir música</strong><br>
-Cambia el ambiente en el próximo pomodoro. Opciones: Biblioteca, Bosque, Cafetería, Chimenea, Clásica, Lluvia, Ondas de mar, Ondas alfa, Piano, Ruido, Teclas o Tecno.
-<br><span class="precio">2.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>❓ Haz una pregunta o abre tema de conversación</strong><br>
-¡Pregunta o abre debate de lo que quieras! Siempre con respeto y considerando que te podamos contestar. Lo vemos durante el descanso.
-<br><span class="precio">2.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🕹️ ¡Jugamos!</strong><br>
-Nos echamos una partida rápida durante la pausa de estudio: kukoro, contexto, Jackbox Party, jklm fun, Escape Rooms, Quiz, Burgers, Aventura...
-<br><span class="precio">2.200 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>⛩️ Elijo Árbol: Colección Japonesa</strong><br>
-Planta un árbol de la colección Japonesa en el próximo pomodoro. Opciones: sakura, bonsai, arce_rojo, bambu, pino_japones.
-<br><span class="precio">2.500 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>✨ Elijo Árbol: Colección Fantástica</strong><br>
-Planta un árbol mágico de la colección Fantástica en el próximo pomodoro. Opciones: luminoso, cristal, oscuro, arcoiris, dorado, mecanico, fantasma.
-<br><span class="precio">3.750 puntos</span>
-</div>
-
-<div class="canje">
-<strong>⏱️ Reto express de 20 segundos</strong><br>
-Ponme a prueba con un minireto que se pueda cumplir rápido en directo durante el descanso. ¡Sé creativx pero respeta las normas!
-<br><span class="precio">4.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🚩 Guiar raid</strong><br>
-Sugiere a quién hacer un raid al final del stream.
-<br><span class="precio">5.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>✍️ Frase en la pizarra</strong><br>
-Pon tu frase motivacional o divertida (no spam!) en la pizarra física de mi fondo. La escribiré a mano durante el próximo descanso.
-<br><span class="precio">5.000 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>📚 Elijo Árbol: Colección Oposiciones</strong><br>
-¡La colección del canal! Lo plantamos en el próximo pomodoro. Opciones: cafe, apuntes, estres, no_duermo, examen, aprobado, boe, subrayador, temas, descanso_culposo.
-<br><span class="precio">5.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>📰 Noticias en 10 minutos</strong><br>
-Vemos un vídeo de 10 minutos en el descanso con el resumen de las noticias del día para enterarnos de lo que pasa fuera de la opo, mantenernos informados y no sentirnos aislados del mundo 📰🌍
-<br><span class="precio">5.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>⚙️ Añadir comando</strong><br>
-Añade el comando que se te ocurra, ¡sé creativx!
-<br><span class="precio">7.000 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🌻 Elijo Árbol: Colección Flores</strong><br>
-El premio gordo definitivo. Planta flores especiales en el próximo pomodoro. Opciones: rosa, tulipan, lavanda... o las legendarias: rosa_negra, rosa_dorada. Uso !árboles flores para ver todas.
-<br><span class="precio">7.500 puntos</span>
-</div>
-
-<div class="canje canje-arbol">
-<strong>🌿 Generar tu Bosque Virtual</strong><br>
-Pide que se genere en el chat el enlace web actualizado a tu álbum visual con todos tus árboles coleccionados hasta ahora.
-<br><span class="precio">10.000 puntos</span>
-</div>
-
-<div class="canje">
-<strong>🏅 Ver mis Insignias</strong><br>
-Genera tu colección visual de insignias desbloqueadas en el chat para presumir de tus logros de estudio.
-<br><span class="precio">10.000 puntos</span>
-</div>
-
-<div class="canje canje-discord">
-<strong>🎧 Acceso Discord Salas Pomodoros</strong><br>
-Canjea para obtener el rol necesario y entrar a cualquiera de las salas de Pomodoro (90/15, 75/10 o 60/10) y estudiar con el grupo. Pon tu usuario o mándamelo por susurro.
-<br><span class="precio">20.000 puntos</span>
-</div>
-
-<div class="canje canje-discord">
-<strong>🎙️ Acceso Discord Sala Directo Twitch</strong><br>
-¡Únete a mi mesa de estudio! Canjea para obtener el rol que te permite conectar al canal de voz donde grabo el stream. Pon tu usuario o mándamelo por susurro.
-<br><span class="precio">35.000 puntos</span>
-</div>
-
-<div class="canje canje-discord">
-<strong>📷 Cámara Discord</strong><br>
-Escribe aquí tu usuario de Discord exacto. ⚠️ REQUISITO: Es OBLIGATORIO haberte presentado primero en el canal #presentaciones del servidor para que te demos el acceso a la cámara.
-<br><span class="precio">50.000 puntos</span>
-</div>
-
-<div class="canje canje-vip">
-<strong>⭐ Insignia de Autor</strong><br>
-El premio definitivo a la constancia. Diseñaré y programaré contigo una insignia exclusiva y única en el mundo para tu álbum de insignias.
-<br><span class="precio">100.000 puntos</span>
-</div>
-
-<div class="canje canje-vip">
-<strong>🐸 Añadir BetterTTV Emote</strong><br>
-Añade un emote de BetterTTV al canal de bibiopotoleando. Introduce el enlace a un emote de BetterTTV desde betterttv.com. Solo se admiten emotes que tengan activada la opción de compartir.
-<br><span class="precio">100.000 puntos</span>
-</div>
-
-<div class="canje canje-vip">
-<strong>🌌 Árbol de Autor</strong><br>
-El premio definitivo a la constancia. Diseñaré y programaré contigo un árbol exclusivo y único en el mundo para tu Bosque Virtual.
-<br><span class="precio">125.000 puntos</span>
-</div>
-
+<section class="indice" id="indice"><h2>📚 Busca directamente lo que necesitas</h2><p class="indice-intro">Pulsa en una categoría para ir directamente a sus recompensas, precios y condiciones.</p><div class="indice-grid"><a class="indice-link" href="#interaccion-rapida">⚡ Interacción rápida<span>Pistas, Pasapalabra, postura, hidratación, celebración y chat.</span></a><a class="indice-link" href="#bosque-puntos">🌳 Bosque con PulpiPuntiños<span>Colecciones de árboles, mercado y álbum visual.</span></a><a class="indice-link" href="#descansos-contenido">☕ Descansos, contenido y juegos<span>Minijuegos, música, pausas, retos, noticias y actividades.</span></a><a class="indice-link" href="#personalizacion-logros">🏅 Personalización y logros<span>Comandos, insignias, emotes y Árboles de Autor.</span></a><a class="indice-link" href="#discord">👾 Accesos de Discord<span>Salas de Pomodoro, sala del directo y cámara.</span></a><a class="indice-link" href="#potenciadores-bits">💎 Potenciadores de Bits<span>Árboles directos, packs, regalos y ventajas especiales.</span></a><a class="indice-link" href="#recompensas-twitch">💬 Recompensas de Twitch<span>Mensajes destacados, emotes temporales y recompensas predeterminadas.</span></a><a class="indice-link" href="#ventaja-suscripcion">🎁 Ventaja por suscripción<span>Árboles sorpresa al suscribirte, renovar o recibir una sub.</span></a><a class="indice-link" href="#guias-relacionadas">🔗 Otras guías<span>Bosque, tareas, estados, insignias, Discord y más.</span></a></div></section><section id="antes-de-empezar">
+<h2>🧭 Antes de empezar</h2>
+<div class="intro-box"><strong>🐙 PulpiPuntiños:</strong> se consiguen viendo y participando en el canal. Se gastan desde el icono de recompensas debajo del chat.</div>
+<div class="intro-box"><strong>💎 Bits:</strong> son una forma de apoyo económico a través de Twitch. Los potenciadores personalizados están activos mientras aparezcan habilitados.</div>
+<div class="notice">Las propuestas que incluyan nombres, mensajes, comandos o diseños se revisarán antes de activarse. No se aceptan enlaces, publicidad, spam ni contenido que incumpla las normas del canal.</div>
 </section>
-
-<section>
-  <h2>🔗 Guías relacionadas</h2>
-
-  <div class="links">
-    <p>🌳 Bosque virtual:<br>
-      <a href="https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html">https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html</a>
-    </p>
-
-    <p>📝 Tareas:<br>
-      <a href="https://bibiopotoleando.github.io/guia-tareas/guia_tareas.html">https://bibiopotoleando.github.io/guia-tareas/guia_tareas.html</a>
-    </p>
-
-    <p>🎁 Canjeos:<br>
-      <a href="https://bibiopotoleando.github.io/guia-canjeos/guia_canjeos.html">https://bibiopotoleando.github.io/guia-canjeos/guia_canjeos.html</a>
-    </p>
-
-    <p>📌 Estados:<br>
-      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/estados.html">https://bibiopotoleando.github.io/estados-y-bebidas/estados.html</a>
-    </p>
-
-    <p>☕ Bebidas:<br>
-      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html">https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html</a>
-    </p>
-
-    <p>🎯 Retos:<br>
-      <a href="https://bibiopotoleando.github.io/retos/retos.html">https://bibiopotoleando.github.io/retos/retos.html</a>
-    </p>
-
-    <p>🎮 Minijuego:<br>
-      <a href="https://bibiopotoleando.github.io/minijuego-guia/index.html">https://bibiopotoleando.github.io/minijuego-guia/index.html</a>
-    </p>
-
-    <p>🏅 Insignias:<br>
-      <a href="https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html">
-        https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html
-      </a>
-    </p>
-
-    <p>📦 Material:<br>
-      <a href="https://bibiopotoleando.github.io/estados-y-bebidas/material.html">https://bibiopotoleando.github.io/estados-y-bebidas/material.html</a>
-    </p>
-    
-    <p>👾 Discord:<br>
-      <a href="https://bibiopotoleando.github.io/discord/index.html">
-        https://bibiopotoleando.github.io/discord/index.html
-      </a>
-    </p>
-  </div>
-</section>
-
+<section id="interaccion-rapida"><h2>⚡ Interacción rápida</h2><p>Canjeos para intervenir rápidamente en el chat o llamar la atención de Alba.</p><div class="canje"><strong>💡 Pedir una pista</strong><br/>Revela un dato o una letra de la respuesta actual. Cada pista reduce el premio final del minijuego en 5 puntos.<br/><span class="precio">25 puntos</span></div><div class="canje"><strong>🔠 Pasapalabra</strong><br/>Salta el minijuego activo y lanza uno nuevo para el chat.<br/><span class="precio">50 puntos</span></div><div class="canje"><strong>🧘 ¡Oye! Corrige la postura.</strong><br/>Recuérdale a Alba que corrija la postura antes de acabar estudiando en modo gamba 🦐<br/><span class="precio">100 puntos</span></div><div class="canje canje-vip"><strong>🥳 ¡¡Plaza conseguida!! 🎓</strong><br/>Si has conseguido tu plaza, canjea esta recompensa para celebrarlo con toda la comunidad.<br/><span class="precio">100 puntos</span></div><div class="canje"><strong>💧 ¡Oye! Hidrátate, anda.</strong><br/>Recuérdale a Alba que beba agua durante el directo.<br/><span class="precio">200 puntos</span></div><div class="canje"><strong>💬 Chat Solo emoticonos</strong><br/>Activa el modo Solo emoticonos durante 2 minutos.<br/><span class="precio">1.000 puntos</span></div><a class="volver" href="#indice">↑ Volver al índice</a></section><section id="bosque-puntos"><h2>🌳 Bosque con PulpiPuntiños</h2><p>Elige árboles para próximos pomodoros, intercambia repetidos o genera tu álbum.</p><div class="canje canje-arbol"><strong>🌱 Elijo Árbol: Colección básica</strong><br/>Elige el árbol de la colección Básica que quieres plantar en un próximo pomodoro. Opciones: roble, pino, olivo, abeto o sauce.<br/><span class="precio">50 puntos</span></div><div class="canje canje-arbol"><strong>♻️ Mercado de árboles</strong><br/>Cuando tengas 30 unidades del mismo árbol, podrás cambiarlas por uno de la colección siguiente. Escribe: <code>[árbol repetido] [árbol deseado]</code>.<br/><span class="precio">500 puntos</span></div><div class="canje canje-arbol"><strong>🌴 Elijo Árbol: Colección Tropical</strong><br/>Elige: palmera, cocotero, mango, platanera o flamboyán.<br/><span class="precio">1.000 puntos</span></div><div class="canje canje-arbol"><strong>🌵 Elijo Árbol: Colección Desierto</strong><br/>Elige: cactus, cactus_flor, agave, yuca o baobab.<br/><span class="precio">1.100 puntos</span></div><div class="canje canje-arbol"><strong>🍎 Elijo Árbol: Colección Frutales</strong><br/>Elige: manzano, peral, cerezo, melocotonero o granado.<br/><span class="precio">1.100 puntos</span></div><div class="canje canje-arbol"><strong>🌳 Elijo Árbol: Colección Española</strong><br/>Elige: encina, almendro, naranjo, limonero o alcornoque.<br/><span class="precio">1.150 puntos</span></div><div class="canje canje-arbol"><strong>🌲 Elijo Árbol: Colección Invernal</strong><br/>Elige: abeto_nevado, pino_nevado, abedul, acebo o sauce_helado.<br/><span class="precio">1.200 puntos</span></div><div class="canje canje-arbol"><strong>👨‍👩‍👧‍👦 Elijo Árbol: Colección Familia</strong><br/>Elige: madre, padre, abuela, abuelo o hermanos.<br/><span class="precio">1.800 puntos</span></div><div class="canje canje-arbol"><strong>🍁 Elijo Árbol: Colección Otoñal</strong><br/>Elige: arce_naranja, roble_otonal, castaño, nogal o liquidámbar.<br/><span class="precio">1.800 puntos</span></div><div class="canje canje-arbol"><strong>⛩️ Elijo Árbol: Colección Japonesa</strong><br/>Elige: sakura, bonsái, arce_rojo, bambú o pino_japonés.<br/><span class="precio">2.800 puntos</span></div><div class="canje canje-arbol"><strong>✨ Elijo Árbol: Colección Fantástica</strong><br/>Elige: luminoso, cristal, oscuro, arcoíris, dorado, mecánico o fantasma.<br/><span class="precio">4.050 puntos</span></div><div class="canje canje-arbol"><strong>📚 Elijo Árbol: Colección Oposiciones</strong><br/>Elige: café, apuntes, estrés, no_duermo, examen, aprobado, BOE, subrayador, temas o descanso_culposo.<br/><span class="precio">5.300 puntos</span></div><div class="canje canje-arbol"><strong>🌻 Elijo Árbol: Colección Flores</strong><br/>Elige una flor para el próximo pomodoro. Usa <code>!árboles flores</code> para consultar todas las opciones.<br/><span class="precio">7.800 puntos</span></div><div class="canje canje-arbol"><strong>🌿 Generar tu Bosque Virtual</strong><br/>Genera el enlace actualizado a tu álbum visual con todos los árboles que has coleccionado.<br/><span class="precio">10.000 puntos</span></div><div class="canje canje-sus"><strong>🌸 Elijo Árbol: Colección Suscriptores</strong><br/>Recompensa exclusiva para personas con suscripción activa. Elige uno de los 12 árboles mensuales de la colección Suscriptores para plantarlo en un próximo pomodoro.<br/><span class="precio">50.000 puntos</span></div><a class="volver" href="#indice">↑ Volver al índice</a></section><section id="descansos-contenido"><h2>☕ Descansos, contenido y juegos</h2><p>Canjeos para organizar las pausas, elegir contenido o añadir actividades al directo.</p><div class="canje"><strong>🎮 Minijuego extra</strong><br/>Añade un minijuego interactivo adicional durante el descanso.<br/><span class="precio">350 puntos</span></div><div class="canje"><strong>🤸 Estiramientos</strong><br/>Ponemos un vídeo breve de 5 a 10 minutos para mover el cuerpo y descansar la espalda.<br/><span class="precio">1.000 puntos</span></div><div class="canje"><strong>☁️ Ampliar descanso</strong><br/>Añade 5 minutos al descanso actual.<br/><span class="precio">1.500 puntos</span></div><div class="canje"><strong>🍅 Ampliar pomodoro</strong><br/>Añade 5 minutos al bloque de estudio actual.<br/><span class="precio">1.850 puntos</span></div><div class="canje"><strong>📊 Sugerir encuesta</strong><br/>Propón una encuesta para realizar durante el stream.<br/><span class="precio">2.000 puntos</span></div><div class="canje"><strong>🎵 Elegir música</strong><br/>Elige el ambiente del próximo pomodoro: Biblioteca, Bosque, Cafetería, Chimenea, Clásica, Lluvia, Ondas de mar, Ondas alfa, Piano, Ruido, Teclas o Tecno.<br/><span class="precio">2.000 puntos</span></div><div class="canje"><strong>❓ Haz una pregunta o abre tema de conversación</strong><br/>Propón una pregunta o un debate respetuoso para comentar durante el descanso.<br/><span class="precio">2.000 puntos</span></div><div class="canje"><strong>🕹️ ¡Jugamos!</strong><br/>Jugamos una partida rápida durante la pausa: Kukoro, Contexto, Jackbox, JKLM, escape rooms, quiz, Burgers, aventura…<br/><span class="precio">2.200 puntos</span></div><div class="canje"><strong>⏱️ Reto express de 20 segundos</strong><br/>Propón un minireto rápido que pueda cumplirse durante el descanso.<br/><span class="precio">4.000 puntos</span></div><div class="canje"><strong>🚩 Guiar raid</strong><br/>Sugiere a quién hacer raid al final del stream.<br/><span class="precio">5.000 puntos</span></div><div class="canje"><strong>✍️ Frase en la pizarra</strong><br/>Escribe una frase motivacional o divertida para la pizarra física del fondo.<br/><span class="precio">5.000 puntos</span></div><div class="canje"><strong>📰 Noticias en 10 minutos</strong><br/>Vemos un vídeo breve con el resumen de las noticias del día para mantenernos informados fuera de la opo.<br/><span class="precio">5.000 puntos</span></div><a class="volver" href="#indice">↑ Volver al índice</a></section><section id="personalizacion-logros"><h2>🏅 Personalización y logros</h2><p>Propuestas y recompensas especiales que Alba revisará antes de activarlas.</p><div class="canje"><strong>⚙️ Añadir comando</strong><br/>Propón un comando y su respuesta. La propuesta se revisará antes de activarse.<br/><span class="precio">7.000 puntos</span></div><div class="canje"><strong>🏅 Ver mis Insignias</strong><br/>Genera tu colección visual de insignias desbloqueadas.<br/><span class="precio">10.000 puntos</span></div><div class="canje canje-vip"><strong>⭐ Insignia de Autor</strong><br/>Diseñaremos y programaremos una insignia exclusiva para tu álbum. La propuesta se revisará antes de realizarse.<br/><span class="precio">100.000 puntos</span></div><div class="canje canje-vip"><strong>🐸 Añadir BetterTTV Emote</strong><br/>Introduce el enlace de un emote compartible de BetterTTV. Debe cumplir las normas del canal.<br/><span class="precio">100.000 puntos</span></div><div class="canje canje-vip"><strong>🌌 Árbol de Autor</strong><br/>Diseñaremos y programaremos contigo un árbol exclusivo para el Bosque Virtual.<br/><span class="precio">125.000 puntos</span></div><a class="volver" href="#indice">↑ Volver al índice</a></section><section id="discord"><h2>👾 Accesos de Discord</h2><p>Canjeos para conseguir roles y acceder a zonas concretas del servidor.</p><div class="canje canje-discord"><strong>🎧 Acceso Discord Salas Pomodoros</strong><br/>Obtén el rol para entrar a las salas de Pomodoro. Pon tu usuario de Discord o envíalo por susurro.<br/><span class="precio">20.000 puntos</span></div><div class="canje canje-discord"><strong>🎙️ Acceso Discord Sala Directo Twitch</strong><br/>Obtén el rol para entrar al canal de voz donde se realiza el stream. Pon tu usuario de Discord o envíalo por susurro.<br/><span class="precio">35.000 puntos</span></div><div class="canje canje-discord"><strong>📷 Cámara Discord</strong><br/>Escribe tu usuario exacto de Discord. Es obligatorio haberte presentado antes en <code>#presentaciones</code>.<br/><span class="precio">50.000 puntos</span></div><a class="volver" href="#indice">↑ Volver al índice</a></section>
+<section id="potenciadores-bits">
+<h2>💎 Potenciadores personalizados de Bits</h2>
+<div class="notice">Los árboles obtenidos mediante Bits se añaden directamente a la colección personal. No hace falta plantarlos en un pomodoro.</div>
+<div class="canje canje-bits"><strong>💧 Riega el bosque</strong><br/>Una lluvia cae sobre nuestro bosque para que los árboles sigan creciendo 🌧️🌱<br/><span class="precio">50 Bits</span></div>
+<div class="canje canje-bits"><strong>🌳 Árbol sorpresa para tu colección</strong><br/>Recibe un árbol sorpresa de cualquier colección, incluida Suscriptores. Los árboles más exclusivos tienen menos probabilidades de salir. Se añadirá directamente a tu colección.<br/><span class="precio">100 Bits</span></div>
+<div class="canje canje-bits"><strong>🎁 Regala una semilla</strong><br/>Regala un árbol sorpresa a alguien del chat. Escribe <code>@usuario</code> o <code>ALEATORIO</code>. Las colecciones más exclusivas tienen menos probabilidad de salir.<br/><span class="precio">150 Bits</span></div>
+<div class="canje canje-bits"><strong>🌲 Elige un árbol para tu colección</strong><br/>Elige cualquier árbol de todas las colecciones, incluida Suscriptores. Escríbelo como aparece en <code>!árboles [colección]</code>. Se añadirá a tu colección; no se plantará.<br/><span class="precio">250 Bits</span></div>
+<div class="canje canje-bits"><strong>🎁 Pack sorpresa x3</strong><br/>Recibe 3 árboles sorpresa de cualquier colección. Las colecciones más exclusivas tienen menos probabilidad de aparecer. Se añadirán directamente a tu bosque.<br/><span class="precio">330 Bits</span></div>
+<div class="canje canje-bits"><strong>🌱 Impulsa el próximo pomo</strong><br/>Tu nombre de usuario aparecerá durante todo el próximo pomodoro como la persona que le dio el empujoncito al bosque 🌱<br/><span class="precio">350 Bits</span></div>
+<div class="canje canje-bits"><strong>✨ Pack sorpresa x5</strong><br/>Recibe 5 árboles sorpresa de cualquier colección, incluida Suscriptores. Cuanto más exclusiva sea la colección, menos probable será que aparezca.<br/><span class="precio">475 Bits</span></div>
+<div class="canje canje-bits"><strong>✨ Cofre comunitario</strong><br/>Quienes completen el próximo pomodoro recibirán un árbol sorpresa extra de las colecciones generales. Un regalo comunitario para hacer crecer el bosque.<br/><span class="precio">500 Bits</span></div>
+<div class="canje canje-bits"><strong>🏕️ Adopta una parcela</strong><br/>Ponle nombre a una parcela del bosque y aparecerá en directo durante 7 días. Escribe un nombre corto y apto para el canal 🌿<br/><span class="precio">500 Bits</span></div>
+<div class="canje canje-bits"><strong>🌿 Bosque a tu elección</strong><br/>Elige 3 árboles de cualquier colección, incluida Suscriptores. Escribe sus nombres separados por comas. Se añadirán a tu colección y no se plantarán. Usa puntos del canal para plantarlos.<br/><span class="precio">650 Bits</span></div>
+<div class="canje canje-bits canje-vip"><strong>🌳 Crea un Árbol de Autor</strong><br/>Propón un árbol original para la Zona Artística. Alba lo adaptará al canal, llevará tu nombre y recibirás el primero. Después podrá plantarse para la comunidad. Sujeto a revisión.<br/><span class="precio">1.500 Bits</span></div>
+<div class="canje canje-bits"><strong>⌨️ Crea un comando del canal</strong><br/>Propón un comando y su respuesta. Escríbelo como <code>!comando | mensaje</code>. Alba lo revisará antes de activarlo y seguirá en el canal mientras encaje.<br/><span class="precio">1.500 Bits</span></div>
+<div class="canje canje-bits"><strong>📣 Mensaje recurrente del directo</strong><br/>Tu mensaje aprobado se repetirá en el chat cada 120 minutos durante este directo, hasta 4 veces. Sin enlaces, publicidad ni spam. Escribe el texto.<br/><span class="precio">2.500 Bits</span></div>
+<a class="volver" href="#indice">↑ Volver al índice</a></section>
+<section id="recompensas-twitch">
+<h2>💬 Recompensas predeterminadas de Twitch</h2>
+<div class="canje"><strong>Enviar un mensaje en modo Solo suscriptores</strong><br/>Permite enviar un mensaje aunque el chat esté temporalmente en modo Solo suscriptores.<br/><span class="precio">1.000 puntos</span></div>
+<div class="canje"><strong>Destacar mi mensaje</strong><br/>Muestra tu mensaje de forma destacada en el chat.<br/><span class="precio">1.000 puntos</span></div>
+<div class="canje"><strong>Desbloquear un emoticono de suscriptor aleatorio</strong><br/>Desbloquea temporalmente un emote aleatorio del canal.<br/><span class="precio">1.000 puntos</span></div>
+<div class="canje"><strong>Seleccionar un emoticono para desbloquearlo</strong><br/>Elige qué emote del canal quieres desbloquear temporalmente.<br/><span class="precio">10.000 puntos</span></div>
+<div class="canje"><strong>Modificar un emoticono</strong><br/>Aplica temporalmente una modificación disponible a un emote.<br/><span class="precio">20.000 puntos</span></div>
+<a class="volver" href="#indice">↑ Volver al índice</a></section>
+<section id="ventaja-suscripcion">
+<h2>🎁 Ventaja por suscripción</h2>
+<div class="canje canje-sus"><strong>Árboles sorpresa por suscribirte o renovar</strong><br/>La suscripción añade directamente árboles aleatorios a tu colección personal, incluyendo todas las colecciones generales y excluyendo Árboles de Autor. Las suscripciones regaladas cuentan para quien las recibe.<br/><br/>1–2 meses: 1 árbol · 3–4 meses: 2 · 5–6 meses: 3 · 7–8 meses: 4 · 9–10 meses: 5 · 11 o más: 6.</div>
+<a class="volver" href="#indice">↑ Volver al índice</a></section>
+<section id="guias-relacionadas">
+<h2>🔗 Guías relacionadas</h2>
+<div class="links">
+<p>🌳 Bosque virtual:<br/><a href="https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html">https://bibiopotoleando.github.io/bosque-visual/guia_bosque.html</a></p>
+<p>📝 Tareas:<br/><a href="https://bibiopotoleando.github.io/guia-tareas/guia_tareas.html">https://bibiopotoleando.github.io/guia-tareas/guia_tareas.html</a></p>
+<p>🎁 Canjeos:<br/><a href="https://bibiopotoleando.github.io/guia-canjeos/guia_canjeos.html">https://bibiopotoleando.github.io/guia-canjeos/guia_canjeos.html</a></p>
+<p>📌 Estados:<br/><a href="https://bibiopotoleando.github.io/estados-y-bebidas/estados.html">https://bibiopotoleando.github.io/estados-y-bebidas/estados.html</a></p>
+<p>☕ Bebidas:<br/><a href="https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html">https://bibiopotoleando.github.io/estados-y-bebidas/bebidas.html</a></p>
+<p>🎯 Retos:<br/><a href="https://bibiopotoleando.github.io/retos/retos.html">https://bibiopotoleando.github.io/retos/retos.html</a></p>
+<p>🎮 Minijuego:<br/><a href="https://bibiopotoleando.github.io/minijuego-guia/index.html">https://bibiopotoleando.github.io/minijuego-guia/index.html</a></p>
+<p>🏅 Insignias:<br/><a href="https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html">https://bibiopotoleando.github.io/guia-insignias/guia_insignias.html</a></p>
+<p>📦 Material:<br/><a href="https://bibiopotoleando.github.io/estados-y-bebidas/material.html">https://bibiopotoleando.github.io/estados-y-bebidas/material.html</a></p>
+<p>👾 Discord:<br/><a href="https://bibiopotoleando.github.io/discord/index.html">https://bibiopotoleando.github.io/discord/index.html</a></p>
+</div>
+<a class="volver" href="#indice">↑ Volver al índice</a></section>
 </main>
-
-<footer>
-📝 ¡Ahorra tus puntos y consigue las mejores recompensas! ✨
-</footer>
-
+<footer>🐙 Ahorra PulpiPuntiños, apoya con Bits y haz crecer la comunidad ✨</footer>
 </body>
 </html>
 
